@@ -1,7 +1,6 @@
 import 'package:e_learning/controller/registration_controller/registration_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/bottomscreen/bottonsheet.dart';
-import 'package:e_learning/view/homescreen/home_screen.dart';
 import 'package:e_learning/view/loginscreen/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

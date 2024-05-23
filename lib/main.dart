@@ -1,5 +1,7 @@
 import 'package:e_learning/controller/current_affairs_controller/current_affairs_controller.dart';
+import 'package:e_learning/controller/home_controller/home_controller.dart';
 import 'package:e_learning/controller/login_controller/login_controller.dart';
+import 'package:e_learning/controller/pyq_pdf_controller/pyq_pdf.dart';
 import 'package:e_learning/controller/registration_controller/registration_controller.dart';
 import 'package:e_learning/controller/theme_controller/theme_controller.dart';
 import 'package:e_learning/firebase_options.dart';
@@ -32,6 +34,12 @@ class LearningApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => CurrentAffarirsCOntroller(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => HomeScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PyqPdfScreenController(),
         )
       ],
       child: MaterialApp(

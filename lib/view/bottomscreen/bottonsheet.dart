@@ -2,7 +2,6 @@ import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/bookmarkscreen/bookmarkscreen.dart';
 import 'package:e_learning/view/classesScreen/classesscreen.dart';
 import 'package:e_learning/view/homescreen/home_screen.dart';
-import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:e_learning/view/profilescreen/profilescreen.dart';
 import 'package:flutter/material.dart';
 

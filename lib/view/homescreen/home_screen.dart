@@ -1,8 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_learning/controller/home_controller/home_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
+import 'package:e_learning/view/homescreen/widgets/pyq_question/pyq_question.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,6 +17,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
+    final homepro = context.watch<HomeScreenController>();
     return Scaffold(
       drawer: Drawer(
         child: DrawerWidget(),
@@ -37,13 +41,17 @@ class _MainScreenState extends State<MainScreen> {
             SliverToBoxAdapter(
                 child: CarouselSlider(
                     items: List.generate(
-                        4,
+                        homepro.image.length,
                         (index) => Material(
                               elevation: 5,
                               child: Container(
                                 height: 200,
                                 width: 400,
-                                child: Center(child: Text("image")),
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            NetworkImage(homepro.image[index]),
+                                        fit: BoxFit.fill)),
                               ),
                             )),
                     options: CarouselOptions(
@@ -156,7 +164,8 @@ class _MainScreenState extends State<MainScreen> {
             ),
             SliverToBoxAdapter(
               child: Row(
-                children: [CurrentAffairContiner()],
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [CurrentAffairContiner(), PyqQuestion()],
               ),
             )
           ],

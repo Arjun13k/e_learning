@@ -15,7 +15,13 @@ class _ListOfCurrentAffairsState extends State<ListOfCurrentAffairs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          "Current Affairs",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        ),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Column(
