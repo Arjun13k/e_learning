@@ -1,4 +1,7 @@
+import 'package:e_learning/view/homescreen/home_screen.dart';
 import 'package:e_learning/view/loginscreen/loginscreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -68,7 +71,16 @@ class _IntroductionPostState extends State<IntroductionPost> {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => StreamBuilder(
+                  stream: FirebaseAuth.instance.authStateChanges(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return MainScreen();
+                    } else {
+                      return LoginScreen();
+                    }
+                  },
+                ),
               ),
               (route) => false);
         },
@@ -76,7 +88,16 @@ class _IntroductionPostState extends State<IntroductionPost> {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => StreamBuilder(
+                  stream: FirebaseAuth.instance.authStateChanges(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return MainScreen();
+                    } else {
+                      return LoginScreen();
+                    }
+                  },
+                ),
               ),
               (route) => false);
         },

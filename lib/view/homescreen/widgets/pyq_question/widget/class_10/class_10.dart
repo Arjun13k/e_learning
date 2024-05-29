@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:e_learning/controller/pyq_pdf_controller/pyq_pdf.dart';
+import 'package:e_learning/view/homescreen/widgets/pyq_question/widget/class_10/pdf_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,19 +30,42 @@ class _Class_10State extends State<Class_10> {
                 mainAxisExtent: 200,
                 mainAxisSpacing: 15,
                 crossAxisSpacing: 15),
-            itemCount: class10Pro.listOfSubject.length,
-            itemBuilder: (context, index) => Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(color: Colors.black12, blurRadius: 10)
-                  ]),
-              child: Center(
-                  child: Text(
-                class10Pro.listOfSubject[index].toString().toUpperCase(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-              )),
+            itemCount: PyqPdfScreenController.subjectCategoryList.length,
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PdfSCreen(),
+                    ));
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            PyqPdfScreenController
+                                .subjectCategoryList[index].image,
+                            scale: 1),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(color: Colors.black12, blurRadius: 10)
+                      ]),
+                  child: ClipRRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+                      child: Center(
+                          child: Text(
+                        PyqPdfScreenController.subjectCategoryList[index].title
+                            .toString()
+                            .toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 30),
+                      )),
+                    ),
+                  )),
             ),
           ),
         ],
