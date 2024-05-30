@@ -16,8 +16,8 @@ class CurrentAffairContiner extends StatelessWidget {
             ));
       },
       child: Container(
-        height: 130,
-        width: 130,
+        height: 110,
+        width: 110,
         padding: EdgeInsets.symmetric(),
         decoration: BoxDecoration(
             image: DecorationImage(

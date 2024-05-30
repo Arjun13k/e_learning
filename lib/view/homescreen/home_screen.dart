@@ -3,6 +3,7 @@ import 'package:e_learning/controller/home_controller/home_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
+import 'package:e_learning/view/homescreen/widgets/feedback/feedback.dart';
 import 'package:e_learning/view/homescreen/widgets/pyq_question/pyq_question.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -164,8 +165,12 @@ class _MainScreenState extends State<MainScreen> {
             ),
             SliverToBoxAdapter(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [CurrentAffairContiner(), PyqQuestion()],
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CurrentAffairContiner(),
+                  PyqQuestion(),
+                  FeedBackScreen()
+                ],
               ),
             )
           ],

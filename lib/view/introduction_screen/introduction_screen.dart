@@ -1,3 +1,4 @@
+import 'package:e_learning/view/bottomscreen/bottonsheet.dart';
 import 'package:e_learning/view/homescreen/home_screen.dart';
 import 'package:e_learning/view/loginscreen/loginscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -92,7 +93,7 @@ class _IntroductionPostState extends State<IntroductionPost> {
                   stream: FirebaseAuth.instance.authStateChanges(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return MainScreen();
+                      return BottomSheetNavigator();
                     } else {
                       return LoginScreen();
                     }
