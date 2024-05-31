@@ -25,6 +25,9 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
         width: 110,
         padding: EdgeInsets.symmetric(),
         decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    "https://img.freepik.com/premium-vector/feedback-support-icon-concept_313674-1102.jpg")),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
       ),

@@ -23,10 +23,19 @@ class _PyqQuestionState extends State<PyqQuestion> {
       child: Container(
         height: 110,
         width: 110,
-        padding: EdgeInsets.symmetric(),
+        padding: EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/image/pyq icon pdf.webp"),
+              scale: 7,
+            ),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
+        child: Text(
+          "Previews Year Questions",
+          style: TextStyle(fontSize: 8, color: Colors.black.withOpacity(.3)),
+        ),
+        alignment: Alignment.bottomCenter,
       ),
     );
   }

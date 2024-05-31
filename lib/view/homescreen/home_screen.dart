@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_learning/controller/home_controller/home_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs.dart';
+import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs_list/list/history_current_affair.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:e_learning/view/homescreen/widgets/feedback/feedback.dart';
 import 'package:e_learning/view/homescreen/widgets/pyq_question/pyq_question.dart';
@@ -86,27 +87,29 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: ColorConstant.splashScreencolor),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      "Demo Classes",
-                      style: TextStyle(
-                          color: ColorConstant.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                    Image.network(
-                      "https://www.shauryaacademyindia.com/wp-content/uploads/2017/08/demo.png",
-                      scale: 4,
-                    ),
-                  ],
+              child: GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: ColorConstant.splashScreencolor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Demo Classes",
+                        style: TextStyle(
+                            color: ColorConstant.whiteColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                      ),
+                      Image.network(
+                        "https://www.shauryaacademyindia.com/wp-content/uploads/2017/08/demo.png",
+                        scale: 4,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -134,27 +137,36 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: ColorConstant.splashScreencolor),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      "Did you know",
-                      style: TextStyle(
-                          color: ColorConstant.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                    Image.network(
-                      "https://img.freepik.com/premium-vector/did-you-know-icon-flat-style-banner-with-frame-bulb-vector-illustration-white-isolated-background-explanation-sign-business-concept_157943-572.jpg?w=2000",
-                      scale: 20,
-                    ),
-                  ],
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HistoryGk(),
+                      ));
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: ColorConstant.splashScreencolor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Did you know Today",
+                        style: TextStyle(
+                            color: ColorConstant.whiteColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                      ),
+                      Image.asset(
+                        "asset/image/did-you-know-sticker-with-yellow-bulb-and-speech-bubble-illustration-free-vector-removebg-preview.png",
+                        scale: 5,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

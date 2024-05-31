@@ -18,14 +18,18 @@ class CurrentAffairContiner extends StatelessWidget {
       child: Container(
         height: 110,
         width: 110,
-        padding: EdgeInsets.symmetric(),
+        padding: EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(
-                    "https://staticimg.amarujala.com/assets/images/results.amarujala.com/2021/05/17/750x506/current-affairs-2021_1621228520.jpeg"),
+                image: AssetImage("asset/image/current affair.png"),
                 fit: BoxFit.fill),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
+        child: Text(
+          "Current Affairs",
+          style: TextStyle(fontSize: 8, color: Colors.black.withOpacity(.3)),
+        ),
+        alignment: Alignment.bottomCenter,
       ),
     );
   }
