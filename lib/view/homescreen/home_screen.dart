@@ -3,6 +3,7 @@ import 'package:e_learning/controller/home_controller/home_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs_list/list/history_current_affair.dart';
+import 'package:e_learning/view/homescreen/widgets/demo_class/demo_class.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:e_learning/view/homescreen/widgets/feedback/feedback.dart';
 import 'package:e_learning/view/homescreen/widgets/pyq_question/pyq_question.dart';
@@ -88,6 +89,13 @@ class _MainScreenState extends State<MainScreen> {
             ),
             SliverToBoxAdapter(
               child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DemoClassViedo(),
+                      ));
+                },
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 15),
                   width: double.infinity,
@@ -118,19 +126,44 @@ class _MainScreenState extends State<MainScreen> {
                 height: 10,
               ),
             ),
-            SliverGrid(
-                delegate: SliverChildBuilderDelegate(
-                    childCount: 6,
-                    (context, index) => Container(
-                          decoration: BoxDecoration(
-                              color: ColorConstant.whiteColor,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Center(child: Text("related to subject")),
-                        )),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10)),
+            SliverToBoxAdapter(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CurrentAffairContiner(),
+                  PyqQuestion(),
+                  FeedBackScreen()
+                ],
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CurrentAffairContiner(),
+                  PyqQuestion(),
+                  FeedBackScreen()
+                ],
+              ),
+            ),
+            // SliverGrid(
+            //     delegate: SliverChildBuilderDelegate(
+            //         childCount: 6,
+            //         (context, index) => Container(
+            //               decoration: BoxDecoration(
+            //                   color: ColorConstant.whiteColor,
+            //                   borderRadius: BorderRadius.circular(10)),
+            //               child: Center(child: Text("related to subject")),
+            //             )),
+            //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //         crossAxisCount: 3,
+            //         mainAxisSpacing: 10,
+            //         crossAxisSpacing: 10)),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 10,
@@ -155,11 +188,11 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        "Did you know Today",
+                        "Did you know",
                         style: TextStyle(
                             color: ColorConstant.whiteColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                            fontSize: 30),
                       ),
                       Image.asset(
                         "asset/image/did-you-know-sticker-with-yellow-bulb-and-speech-bubble-illustration-free-vector-removebg-preview.png",
@@ -176,6 +209,11 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
+              ),
+            ),
+            SliverToBoxAdapter(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -184,7 +222,7 @@ class _MainScreenState extends State<MainScreen> {
                   FeedBackScreen()
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

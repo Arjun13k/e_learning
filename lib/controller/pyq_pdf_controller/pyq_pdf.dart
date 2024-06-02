@@ -36,8 +36,8 @@ class PyqPdfScreenController with ChangeNotifier {
         title: "HINDI",
         listOfQuestionDetails: PyqPdfScreenController.hindiList),
     SubjectCategoryModel(
-        image: "https://scannersuniverse.neocities.org/social_sciences2.jpg",
-        title: "SocialScience",
+        image: "https://cdn.wallpapersafari.com/28/29/nqEAve.png",
+        title: "Social Science",
         listOfQuestionDetails: PyqPdfScreenController.socialScienceList),
     SubjectCategoryModel(
         image: "https://miro.medium.com/max/7200/1*BIDkyWzyOGW-Qt2F2xKmJA.jpeg",

@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:e_learning/controller/pyq_pdf_controller/pyq_pdf.dart';
-import 'package:e_learning/view/homescreen/widgets/pyq_question/widget/class_10/pdf_screen.dart';
+import 'package:e_learning/global/colors/colors.dart';
+import 'package:e_learning/view/homescreen/widgets/pyq_question/widget/class_10/question_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -36,7 +37,7 @@ class _Class_10State extends State<Class_10> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PdfSCreen(),
+                      builder: (context) => QuestionScreen(),
                     ));
               },
               child: Container(
@@ -55,15 +56,18 @@ class _Class_10State extends State<Class_10> {
                       ]),
                   child: ClipRRect(
                     child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
-                      child: Center(
-                          child: Text(
-                        PyqPdfScreenController.subjectCategoryList[index].title
-                            .toString()
-                            .toUpperCase(),
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30),
-                      )),
+                      filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
+                      // child: Center(
+                      //     child: Text(
+                      //   PyqPdfScreenController.subjectCategoryList[index].title
+                      //       .toString()
+                      //       .toUpperCase(),
+                      //   textAlign: TextAlign.center,
+                      //   style: TextStyle(
+                      //       fontWeight: FontWeight.bold,
+                      //       fontSize: 30,
+                      //       color: Colors.black),
+                      // )),
                     ),
                   )),
             ),

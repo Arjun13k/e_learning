@@ -1,3 +1,4 @@
+import 'package:e_learning/controller/additional_course_controller/additional_course_controller.dart';
 import 'package:e_learning/controller/current_affairs_controller/current_affairs_controller.dart';
 import 'package:e_learning/controller/feedback_controller/feedback_controller.dart';
 import 'package:e_learning/controller/home_controller/home_controller.dart';
@@ -44,6 +45,9 @@ class LearningApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => FeedbackController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AdditionalCourseController(),
         )
       ],
       child: MaterialApp(
