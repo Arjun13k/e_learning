@@ -220,40 +220,40 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DemoClassViedo extends StatefulWidget {
-  const DemoClassViedo({super.key});
+  DemoClassViedo({super.key, required this.initialId});
+  String initialId;
 
   @override
   State<DemoClassViedo> createState() => _DemoClassViedoState();
 }
 
 class _DemoClassViedoState extends State<DemoClassViedo> {
-  late YoutubePlayerController _youtubeController;
-
+  late YoutubePlayerController youtubeCOntroller;
   @override
   void initState() {
     super.initState();
-    _youtubeController = YoutubePlayerController(
-      initialVideoId: 'OXQ5ee6p9ZA', // YouTube video ID
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-  }
 
-  @override
-  void dispose() {
-    _youtubeController.dispose();
-    super.dispose();
+    youtubeCOntroller = YoutubePlayerController(
+        initialVideoId: widget.initialId,
+        flags: YoutubePlayerFlags(autoPlay: true, mute: false));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("YouTube Player Demo")),
+      appBar: AppBar(),
       body: Center(
         child: YoutubePlayer(
-          controller: _youtubeController,
+          controller: youtubeCOntroller,
+          bottomActions: [
+            ProgressBar(
+              isExpanded: true,
+            ),
+            CurrentPosition(),
+            FullScreenButton(),
+            PlayPauseButton(),
+            RemainingDuration()
+          ],
           showVideoProgressIndicator: true,
           onReady: () {
             print('Player is ready.');
@@ -261,18 +261,6 @@ class _DemoClassViedoState extends State<DemoClassViedo> {
           onEnded: (YoutubeMetaData metaData) {
             print('Video has ended.');
           },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _youtubeController.value.isPlaying
-                ? _youtubeController.pause()
-                : _youtubeController.play();
-          });
-        },
-        child: Icon(
-          _youtubeController.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
       ),
     );

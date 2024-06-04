@@ -1,6 +1,7 @@
 import 'package:e_learning/controller/additional_course_controller/additional_course_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/classesScreen/widget/spoken_english_class.dart';
+import 'package:e_learning/view/classesScreen/widget/spoken_english_class_list.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -59,7 +60,11 @@ class _ClassScreenState extends State<ClassScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SpokenEnglish(),
+                                    builder: (context) =>
+                                        SpokenENglishSEctionList(
+                                            additionalCourseListModel:
+                                                AdditionalCourseController
+                                                    .courseList[index]),
                                   ));
                             },
                             child: Container(

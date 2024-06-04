@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class SpokenEnglish extends StatefulWidget {
-  const SpokenEnglish({super.key});
-
+class YoutubeVideo extends StatefulWidget {
+  YoutubeVideo({super.key, required this.initialId});
+  String initialId;
   @override
-  State<SpokenEnglish> createState() => _SpokenEnglishState();
+  State<YoutubeVideo> createState() => _YoutubeVideoState();
 }
 
-class _SpokenEnglishState extends State<SpokenEnglish> {
+class _YoutubeVideoState extends State<YoutubeVideo> {
   late YoutubePlayerController youtubeCOntroller;
   @override
   void initState() {
     super.initState();
 
     youtubeCOntroller = YoutubePlayerController(
-        initialVideoId: "hs0FEzGQed0",
+        initialVideoId: widget.initialId,
         flags: YoutubePlayerFlags(autoPlay: true, mute: false));
   }
 

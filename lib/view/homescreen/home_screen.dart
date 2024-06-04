@@ -4,6 +4,7 @@ import 'package:e_learning/global/colors/colors.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs.dart';
 import 'package:e_learning/view/homescreen/widgets/current_affairs/current_affairs_list/list/history_current_affair.dart';
 import 'package:e_learning/view/homescreen/widgets/demo_class/demo_class.dart';
+import 'package:e_learning/view/homescreen/widgets/demo_class/demo_class_list.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:e_learning/view/homescreen/widgets/feedback/feedback.dart';
 import 'package:e_learning/view/homescreen/widgets/pyq_question/pyq_question.dart';
@@ -93,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DemoClassViedo(),
+                        builder: (context) => DemoCLassList(),
                       ));
                 },
                 child: Container(

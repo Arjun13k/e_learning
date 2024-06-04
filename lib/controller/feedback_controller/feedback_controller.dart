@@ -6,9 +6,13 @@ class FeedbackController with ChangeNotifier {
   CollectionReference collectionRef =
       FirebaseFirestore.instance.collection("feedback");
   Future feedSubmit() async {
-    final addSubmission = {"feed": feedbackController.text};
-    collectionRef.add(addSubmission);
-    feedbackController.clear();
-    notifyListeners();
+    try {
+      final addSubmission = {"feed": feedbackController.text};
+      await collectionRef.add(addSubmission);
+      feedbackController.clear();
+      notifyListeners();
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
