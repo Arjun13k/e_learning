@@ -214,16 +214,16 @@ class _MainScreenState extends State<MainScreen> {
                 height: 10,
               ),
             ),
-            SliverToBoxAdapter(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CurrentAffairContiner(),
-                  PyqQuestion(),
-                  FeedBackScreen()
-                ],
-              ),
-            ),
+            // SliverToBoxAdapter(
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //     children: [
+            //       CurrentAffairContiner(),
+            //       PyqQuestion(),
+            //       FeedBackScreen()
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

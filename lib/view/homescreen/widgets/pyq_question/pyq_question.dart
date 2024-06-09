@@ -25,15 +25,21 @@ class _PyqQuestionState extends State<PyqQuestion> {
         width: 110,
         padding: EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("asset/image/pyq icon pdf.webp"),
-              scale: 7,
-            ),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
-        child: Text(
-          "Previews Year Questions",
-          style: TextStyle(fontSize: 8, color: Colors.black.withOpacity(.3)),
+        child: Column(
+          children: [
+            Image.asset("asset/image/pyq icon pdf.webp", scale: 6),
+            Text(
+              "PYQ",
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
         alignment: Alignment.bottomCenter,
       ),

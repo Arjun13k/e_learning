@@ -1,10 +1,8 @@
 import 'package:e_learning/controller/additional_course_controller/additional_course_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
-import 'package:e_learning/view/classesScreen/widget/spoken_english_class.dart';
 import 'package:e_learning/view/classesScreen/widget/spoken_english_class_list.dart';
 import 'package:e_learning/view/homescreen/widgets/drawer_widget/drawer_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ClassScreen extends StatefulWidget {
   const ClassScreen({super.key});
@@ -16,7 +14,6 @@ class ClassScreen extends StatefulWidget {
 class _ClassScreenState extends State<ClassScreen> {
   @override
   Widget build(BuildContext context) {
-    final additionalclassPro = Provider.of<AdditionalCourseController>(context);
     return Scaffold(
       drawer: Drawer(
         child: DrawerWidget(),

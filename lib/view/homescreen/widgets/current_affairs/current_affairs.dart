@@ -20,14 +20,22 @@ class CurrentAffairContiner extends StatelessWidget {
         width: 110,
         padding: EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("asset/image/current affair.png"),
-                fit: BoxFit.fill),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
-        child: Text(
-          "Current Affairs",
-          style: TextStyle(fontSize: 8, color: Colors.black.withOpacity(.3)),
+        child: Column(
+          children: [
+            Image.asset(
+              "asset/image/current affair.png",
+              scale: 6,
+            ),
+            Text(
+              "Current Affairs",
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
         alignment: Alignment.bottomCenter,
       ),

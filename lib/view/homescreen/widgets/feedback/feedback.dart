@@ -23,13 +23,27 @@ class _FeedBackScreenState extends State<FeedBackScreen> {
       child: Container(
         height: 110,
         width: 110,
-        padding: EdgeInsets.symmetric(),
+        padding: EdgeInsets.symmetric(vertical: 2),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://img.freepik.com/premium-vector/feedback-support-icon-concept_313674-1102.jpg")),
             color: ColorConstant.whiteColor,
             borderRadius: BorderRadius.circular(14)),
+        child: Column(
+          children: [
+            Image.asset(
+              "asset/image/feedback-support-icon-concept_313674-1102.jpg",
+              scale: 6,
+            ),
+            Text(
+              "Feedback",
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
