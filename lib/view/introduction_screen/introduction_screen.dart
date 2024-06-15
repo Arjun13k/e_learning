@@ -14,15 +14,15 @@ class IntroductionPost extends StatefulWidget {
 }
 
 class _IntroductionPostState extends State<IntroductionPost> {
-  @override
-  void didChangeDependencies() {
-    precacheImage(AssetImage("asset/image/3761510.jpg"), context);
-    precacheImage(AssetImage("asset/image/18771.jpg"), context);
-    precacheImage(
-        AssetImage("asset/image/2004.i603.001_online_education_set-11.jpg"),
-        context);
-    super.didChangeDependencies();
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   precacheImage(AssetImage("asset/image/3761510.jpg"), context);
+  //   precacheImage(AssetImage("asset/image/18771.jpg"), context);
+  //   precacheImage(
+  //       AssetImage("asset/image/2004.i603.001_online_education_set-11.jpg"),
+  //       context);
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {

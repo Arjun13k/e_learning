@@ -1,5 +1,6 @@
 import 'package:e_learning/controller/theme_controller/theme_controller.dart';
 import 'package:e_learning/global/colors/colors.dart';
+import 'package:e_learning/view/homescreen/widgets/drawer_widget/feedBack.dart';
 import 'package:e_learning/view/loginscreen/loginscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -48,9 +49,18 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           leading: IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
           title: Text("Setting"),
         ),
-        ListTile(
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.feedback)),
-          title: Text("Feedback"),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FeedBack(),
+                ));
+          },
+          child: ListTile(
+            leading: IconButton(onPressed: () {}, icon: Icon(Icons.feedback)),
+            title: Text("Feedback"),
+          ),
         ),
         ListTile(
           leading: Switch(

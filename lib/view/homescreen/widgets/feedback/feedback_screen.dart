@@ -11,9 +11,9 @@ class FeedBackAlign extends StatefulWidget {
 }
 
 class _FeedBackAlignState extends State<FeedBackAlign> {
-  var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    var formKey = GlobalKey<FormState>();
     final feedbackPro = Provider.of<FeedbackController>(context);
     return Scaffold(
         appBar: AppBar(
@@ -54,6 +54,7 @@ class _FeedBackAlignState extends State<FeedBackAlign> {
                     GestureDetector(
                       onTap: () {
                         if (formKey.currentState!.validate()) {
+                          feedbackPro.feedbackController.clear();
                           feedbackPro.feedSubmit();
                           setState(() {});
                         }

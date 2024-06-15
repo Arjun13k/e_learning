@@ -15,6 +15,7 @@ class _ClassScreenState extends State<ClassScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstant.borderColor,
       drawer: Drawer(
         child: DrawerWidget(),
       ),
@@ -29,7 +30,7 @@ class _ClassScreenState extends State<ClassScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
           children: [
             Material(
@@ -49,69 +50,77 @@ class _ClassScreenState extends State<ClassScreen> {
             ),
             ListView.separated(
                 shrinkWrap: true,
-                itemBuilder: (context, index) => Container(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        SpokenENglishSEctionList(
-                                            additionalCourseListModel:
-                                                AdditionalCourseController
-                                                    .courseList[index]),
-                                  ));
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          AdditionalCourseController
-                                              .courseList[index].image),
-                                      fit: BoxFit.cover),
-                                  border: Border.all(width: 1),
-                                  borderRadius: BorderRadius.circular(10)),
-                              height: 100,
-                              width: 100,
+                itemBuilder: (context, index) => Material(
+                      elevation: 5,
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          SpokenENglishSEctionList(
+                                              additionalCourseListModel:
+                                                  AdditionalCourseController
+                                                      .courseList[index]),
+                                    ));
+                              },
+                              child: Material(
+                                elevation: 5,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              AdditionalCourseController
+                                                  .courseList[index].image),
+                                          fit: BoxFit.cover),
+                                      border: Border.all(width: 1),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  height: 100,
+                                  width: 100,
+                                ),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Text("FREE CONTENT"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text("VIDEOS"),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text("FILES")
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                      AdditionalCourseController
-                                          .courseList[index].title
-                                          .toUpperCase(),
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 25)),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text("FREE CONTENT"),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text("VIDEOS"),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text("FILES")
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                        AdditionalCourseController
+                                            .courseList[index].title
+                                            .toUpperCase(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 25)),
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                 separatorBuilder: (context, index) => SizedBox(
